@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         privet
+// @name         private
 // @namespace    http://tampermonkey.net/
 // @version      1.1
 // @description  privet

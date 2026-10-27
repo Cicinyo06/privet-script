@@ -27,6 +27,10 @@ Hiçbir npm bağımlılığı yok; Node.js 20+ yeterli.
 **Windows (en kolayı):** [Node.js LTS](https://nodejs.org) kur, bu klasördeki `baslat.bat` dosyasına çift tıkla.
 Tarayıcıda ayar sayfası açılır; ayarları yapıp **Stremio'ya kur**'a bas. Pencere açık kaldığı sürece eklenti çalışır.
 
+**Her seferinde açmadan, otomatik çalışsın:** `otomatik-baslat-kur.bat`'a bir kez çift tıkla. Eklenti
+Windows açılışında pencere açmadan arka planda başlar. Geri almak için `otomatik-baslat-kaldir.bat`.
+(Klasörün adı `stremio-dil-addon` kalmalı; klasörü taşırsan kur dosyasını yeniden çalıştır.)
+
 **Terminalden:**
 
 ```bash

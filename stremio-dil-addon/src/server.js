@@ -67,6 +67,7 @@ const server = http.createServer(async (req, res) => {
     if (parts[0] === 'configure') return send(res, 200, configurePage(null));
     if (parts[0] === 'manifest.json') return send(res, 200, manifest(false));
     if (parts[0] === 'health') return send(res, 200, { ok: true });
+    if (parts[0] === 'favicon.ico') return send(res, 204, '');
 
     const [cfgStr, resource, ...rest] = parts;
     const cfg = decodeConfig(cfgStr);

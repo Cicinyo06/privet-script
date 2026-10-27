@@ -91,9 +91,16 @@ function build() {
   const b64 = btoa(String.fromCharCode(...new TextEncoder().encode(JSON.stringify(c)))).replace(/\\+/g,'-').replace(/\\//g,'_').replace(/=+$/,'');
   return location.origin + '/' + b64 + '/manifest.json';
 }
-$('f').onsubmit = (e) => { e.preventDefault(); const u = build(); location.href = u.replace(/^https?:/, 'stremio:'); show(u); };
+const isLocal = /^(127\\.0\\.0\\.1|localhost)$/.test(location.hostname);
+$('f').onsubmit = (e) => {
+  e.preventDefault(); const u = build();
+  // Stremio, stremio:// bağlantısını https'e çevirip portu düşürüyor; yerel kurulumda http adresini elle yapıştırmak gerekiyor.
+  if (isLocal) { navigator.clipboard?.writeText(u); show(u, true); return; }
+  location.href = u.replace(/^https?:/, 'stremio:'); show(u);
+};
 $('copy').onclick = () => { const u = build(); navigator.clipboard?.writeText(u); show(u); };
-function show(u){ $('out').style.display='block'; $('out').textContent = u; }
+function show(u, local){ $('out').style.display='block';
+  $('out').textContent = (local ? 'Bağlantı kopyalandı. Stremio > Eklentiler > "Eklentileri ara" kutusuna yapıştırıp Enter’a bas:\\n\\n' : '') + u; $('out').style.whiteSpace='pre-wrap'; }
 </script>
 </main></body></html>`;
 }

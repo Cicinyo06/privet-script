@@ -24,6 +24,11 @@ Hiçbir npm bağımlılığı yok; Node.js 20+ yeterli.
 
 ## Çalıştırma
 
+**Windows (en kolayı):** [Node.js LTS](https://nodejs.org) kur, bu klasördeki `baslat.bat` dosyasına çift tıkla.
+Tarayıcıda ayar sayfası açılır; ayarları yapıp **Stremio'ya kur**'a bas. Pencere açık kaldığı sürece eklenti çalışır.
+
+**Terminalden:**
+
 ```bash
 cd stremio-dil-addon
 npm start              # http://127.0.0.1:7000/configure
